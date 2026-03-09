@@ -38,3 +38,20 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Theme toggle
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = themeToggle.querySelector('.theme-icon');
+const root = document.documentElement;
+
+const saved = localStorage.getItem('theme') || 'dark';
+root.setAttribute('data-theme', saved);
+themeIcon.textContent = saved === 'dark' ? '☀' : '☾';
+
+themeToggle.addEventListener('click', () => {
+  const current = root.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  themeIcon.textContent = next === 'dark' ? '☀' : '☾';
+  localStorage.setItem('theme', next);
+});

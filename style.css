@@ -12,6 +12,43 @@
     --mono: 'Space Mono', monospace;
     --sans: 'Syne', sans-serif;
   }
+  /* Light theme */
+:root[data-theme="light"] {
+  --bg: #f0f2f5;
+  --surface: #ffffff;
+  --surface2: #e8eaf0;
+  --border: #d1d5de;
+  --text: #0a0c0f;
+  --muted: #5a6072;
+}
+:root[data-theme="light"] body::before {
+  background-image:
+    linear-gradient(rgba(0,229,192,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,229,192,0.06) 1px, transparent 1px);
+}
+:root[data-theme="light"] nav.scrolled {
+  background: rgba(240,242,245,0.92);
+}
+
+/* Toggle button */
+.theme-toggle {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: none;
+  font-size: 15px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: rotate(20deg) scale(1.1);
+  box-shadow: 0 0 12px rgba(0,229,192,0.3);
+}
 
   html { scroll-behavior: smooth; }
 
