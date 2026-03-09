@@ -1,0 +1,11 @@
+# GitHub Pages configuration
+include:
+  - assets
+
+# Allow these file types to be served
+plugins: []
+
+# Disable Jekyll processing for these extensions
+exclude: []
+
+# MIME types for proper file serving
